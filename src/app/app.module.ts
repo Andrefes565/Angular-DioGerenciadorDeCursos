@@ -9,6 +9,7 @@ import { StarComponent } from './star/star.component';
 import { ReplacePipe } from './pipes/replace.pipe';
 import { NavBarComponent } from './courses/nav-bar/nav-bar.component';
 import { Error404Component } from './error-404/error-404.component';
+import { CourseInfoComponent } from './courses/course-info.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { Error404Component } from './error-404/error-404.component';
     CourselistComponent,
     StarComponent,
     ReplacePipe,
-    NavBarComponent
+    NavBarComponent,
+    Error404Component,
+    CourseInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,9 @@ import { Error404Component } from './error-404/error-404.component';
       },
       {
         path: 'courses', component: CourselistComponent
+      },
+      {
+        path: 'courses/info/:id', component: CourseInfoComponent
       },
       {
         path: '**', component: Error404Component // ** é para quando ele não encontrar a pagina/link
